@@ -36,7 +36,7 @@ long double s21_log(double x) {
 
   if (x != x) {
     result = x;
-  } else if (x == -S21_INF || x < 0) {  // в принципе можно оставить и x < 0
+  } else if (x == -S21_INF || x < 0) {
     result = S21_NAN;
   } else if (x == S21_INF) {
     result = S21_INF;
@@ -194,7 +194,6 @@ long double s21_pow(double x, double exp) {
     if (copy == 0) {
       result = s21_exp(exp * s21_log(copy));
       if (s21_fmod(exp, 2) != 0) {
-        // четная нечетная степень при отриц основании
         result = -result;
       }
     } else {
